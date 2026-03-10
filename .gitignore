@@ -1,0 +1,8 @@
+.env
+.dart_tool/
+build/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+macos/Pods/
+.pub-cache/

@@ -1,0 +1,31 @@
+sheet;klas;roepnaam;voorvoegsel;achternaam;crebo;opleiding;cohort;email_school;docent;bpv_bedrijf;bpv_bezoekadres;bpv_status;bpv_begindatum;bpv_verwachte_einddatum;bpv_email;opmerkingen
+SD;BO4BPVSD;Nawin;;Amim;25604;Software Development;2023/2024;N.Amim@student.talland.nl;Maikel;Ambis Digital;Eerste Van der Helststraat 64, 1072 NZ  AMSTERDAM;Definitief;1/5/26;5/15/26;paul.bijlsma@ambisgroup.nl;
+SD;BO4BPVSD;Jeric;;Garibay;25998;Software Development;2024/2025;J.Garibay@student.talland.nl;Maikel;Ambis Digital;Eerste Van der Helststraat 64, 1072 NZ  AMSTERDAM;Definitief;1/31/26;7/3/26;;
+SD;BO4BPVSD;Berat;;Basan;25604;Software Development;2023/2024;B.Basan@student.talland.nl;Marco de Boer;Brandr;Raasdorperweg 52 H, 1175 KX  LIJNDEN;Definitief;1/26/26;6/8/26;info@brandr.nl;
+SD;BO4BPVSD;Abraham;;Ankrah;25604;Software Development;2022/2023;A.Ankrah@student.talland.nl;Marco de Boer;Coatings Color Service;Nijverheidslaan 30 C, 1382 LJ  Weesp;Definitief;1/5/26;5/15/26;;
+SD;BO4BPVSD;Finn;;Kors;25998;Software Development;2024/2025;F.Kors@student.talland.nl;Pieter Leek;CS digital media;Vliegtuigstraat 26, 1059 CL  AMSTERDAM;Definitief;2/2/26;7/3/26;;
+SD;BO4BPVSD;Michael;;Wan;25998;Software Development;2024/2025;M.Wan@student.talland.nl;Pieter Leek;CS digital media;Vliegtuigstraat 26, 1059 CL  AMSTERDAM;Definitief;8/25/25;7/31/26;;
+SD;BO4BPVSD;Umut;;Eren;25604;Software Development;2022/2023;U.Eren@student.talland.nl;Morad el Haddaoui;Demirel IT;Zeemansstraat 58, 1506 CV  ZAANDAM;Definitief;1/6/26;6/3/26;info@websitekid.nl;
+SD;BO4BPVSD;Hilal;;Ünver;25604;Software Development;2023/2024;H.Ünver@student.talland.nl;Morad el Haddaoui;Demirel IT;Zeemansstraat 58, 1506 CV  ZAANDAM;Definitief;2/3/26;6/8/26;info@websitekid.nl;
+SD;BO4BPVSD;Keanu;;Fortes;25604;Software Development;2022/2023;K.Fortes@student.talland.nl;Marco de Boer;DTT Multimedia;Sint Nicolaasstraat 9, 1012 NJ  AMSTERDAM;Voorlopig;2/10/26;6/19/26;;
+SD;BO4BPVSD;Abdullahi;;Abdi;25998;Software Development;2024/2025;A.Abdi@student.talland.nl;Maikel;Dutch Branders;Handelsweg 12 H, 1521 NH  WORMERVEER;Definitief;1/5/26;5/15/26;burak@dutchbranders.nl;
+SD;BO4BPVSD;Abu;;Ali;25604;Software Development;2023/2024;A.Ali@student.talland.nl;Maikel;Dutch Branders;Handelsweg 12 H, 1521 NH  WORMERVEER;Definitief;1/5/26;5/15/26;burak@dutchbranders.nl;
+SD;BO4BPVSD;Ibtissam;El;Haddad;25604;Software Development;2023/2024;I.Haddad@student.talland.nl;Maikel;Dutch Branders;Handelsweg 12 H, 1521 NH  WORMERVEER;Definitief;1/5/26;5/15/26;burak@dutchbranders.nl;
+SD;BO4BPVSD;Salah-Eddine;;Khatri;25604;Software Development;2023/2024;S.Khatri@student.talland.nl;Maikel;Dutch Branders;Handelsweg 12 H, 1521 NH  WORMERVEER;Overeenkomst afgedrukt;1/5/26;5/15/26;burak@dutchbranders.nl;
+SD;BO4BPVSD;Kaan;;Kömür;25998;Software Development;2024/2025;K.Kömür@student.talland.nl;Pieter Leek;Elockers bv;Schakelstraat 24 B, 1014 AW  AMSTERDAM;Definitief;2/4/26;7/3/26;;
+SD;BO4BPVSD;Daan;;Bolhaar;25604;Software Development;2023/2024;D.Bolhaar@student.talland.nl;Marco de Boer;Emily Systems B.V.;Industrieweg 6 D, 1566 JP  ASSENDELFT;Definitief;1/5/26;5/11/26;jeremy.buitenhuis@emilysystems.nl;startgesprek geweest
+SD;BO4BPVSD;Silko;;Kochev;25998;Software Development;2024/2025;S.Kochev@student.talland.nl;Marco de Boer;Emily Systems B.V.;Industrieweg 6 D, 1566 JP  ASSENDELFT;Definitief;8/25/25;7/31/26;sueling.to@emilysystems.nl;eindgesprek 1e deel stage geweest
+SD;BO4BPVSD;Illias;;Bourjila;25604;Software Development;2023/2024;I.Bourjila@student.talland.nl;Marco de Boer;ICT vanaf Morgen B.V.;Marconistraat 16, 1821 BX  ALKMAAR;Definitief;1/5/26;5/10/26;;
+SD;BO4BPVSD;El Yazid;;Houssni;25604;Software Development;2023/2024;E.Houssni@student.talland.nl;Marco de Boer;ICT vanaf Morgen B.V.;Marconistraat 16, 1821 BX  ALKMAAR;Definitief;1/5/26;5/10/26;;
+SD;BO4BPVSD;Dirk-Jan;;Schoone;25998;Software Development;2024/2025;D.Schoone@student.talland.nl;Marco de Boer;ICT vanaf Morgen B.V.;Marconistraat 16, 1821 BX  ALKMAAR;Definitief;1/12/26;7/4/26;;
+SD;BO4BPVSD;Yayhya;van;Son;25604;Software Development;2023/2024;Y.Son@student.talland.nl;Marco de Boer;ICT vanaf Morgen B.V.;Marconistraat 16, 1821 BX  ALKMAAR;Definitief;1/5/26;5/15/26;jvanoostenbrugge@ictvanafmorgen.nl;
+SD;BO4BPVSD;Kenza;;Wolters;25604;Software Development;2023/2024;K.Wolters@student.talland.nl;Marco de Boer;ICT vanaf Morgen B.V.;Marconistraat 16, 1821 BX  ALKMAAR;Definitief;11/15/25;5/24/26;jvanoostenbrugge@ictvanafmorgen.nl;
+SD;BO4BPVSD;Yaqub;;Abdulqadir;25604;Software Development;2023/2024;Y.Abdulqadir@student.talland.nl;Maikel;Learn en Earn;Koepelplein 1 E, 2031 WL  Haarlem;Overeenkomst afgedrukt;1/5/26;5/15/26;info@learnenearn.nl;
+SD;BO4BPVSD;Sonia;;Haqqani;25604;Software Development;2023/2024;S.Haqqani@student.talland.nl;Maikel;Learn en Earn;Koepelplein 1 E, 2031 WL  Haarlem;Overeenkomst afgedrukt;1/5/26;5/15/26;info@learnenearn.nl;
+SD;BO4BPVSD;Jayden;;Klaverweide;25998;Software Development;2024/2025;J.Klaverweide@student.talland.nl;Pieter Leek;RB2 B.V.;Wilhelminalaan 1 C, 1441 EK  PURMEREND;Definitief;2/2/26;7/3/26;;
+SD;BO4BPVSD;Hayan;;Atif;25604;Software Development;2023/2024;H.Atif@student.talland.nl;;ROXTAR Online Marketing B.V.;Asterweg 17 A6, 1031 HL  AMSTERDAM;Definitief;2/2/26;7/3/26;info@roxtar.nl;
+SD;BO4BPVSD;Sarah;;Bennour;25998;Software Development;2024/2025;S.Bennour@student.talland.nl;Marco de Boer;Tata Steel IJmuiden B.V.;Witte Hekweg 23, 1951 HK  VELSEN-NOORD;Overeenkomst afgedrukt;2/2/26;6/15/26;;
+SD;BO4BPVSD;Mohamed;;Nadour;25604;Software Development;2022/2023;M.Nadour@student.talland.nl;Marco de Boer;Webarctic;Paasheuvelweg 33, 1105 BG  AMSTERDAM;Definitief;10/27/25;3/15/26;;
+SD;BO4BPVSD;Mohamed;;Alhafez;25604;Software Development;2021/2022;M.Alhafez@student.talland.nl;Marco de Boer;Witgoedbedrijf.nl;Pieter Ghijsenlaan 27, 1506 PW  ZAANDAM;Definitief;10/6/25;3/1/26;aelhadrati@gmail.com;
+SD;BO4BPVSD;Mathijs;;Berkelaar;25998;Software Development;2024/2025;M.Berkelaar@student.talland.nl;Pieter Leek;Yuluma Webshops;Keesomstraat 6 c, 1821 BS  ALKMAAR;Definitief;2/2/26;7/3/26;;
+SD;BO4BPVA;Deshawn;;Offei;25998;Software Development;2024/2025;D.Offei@student.talland.nl;Marco de Boer;Tata Steel IJmuiden B.V.;Witte Hekweg 23, 1951 HK  VELSEN-NOORD;Overeenkomst afgedrukt;2/13/26;7/3/26;;
