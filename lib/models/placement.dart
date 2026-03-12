@@ -36,6 +36,8 @@ class Placement {
   final DateTime createdAt;
   final DateTime updatedAt;
 
+  final String? bpv_telefoon;
+
   const Placement({
     required this.id,
     required this.sheet,
@@ -65,6 +67,7 @@ class Placement {
     this.deleted = false,
     required this.createdAt,
     required this.updatedAt,
+    this.bpv_telefoon,
   });
 
   String get fullName {
@@ -105,6 +108,7 @@ class Placement {
     bool? deleted,
     DateTime? createdAt,
     DateTime? updatedAt,
+    String? bpv_telefoon,
   }) {
     return Placement(
       id: id ?? this.id,
@@ -135,6 +139,7 @@ class Placement {
       deleted: deleted ?? this.deleted,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
+      bpv_telefoon: bpv_telefoon ?? this.bpv_telefoon,
     );
   }
 
@@ -167,6 +172,7 @@ class Placement {
         'deleted': deleted ? 1 : 0,
         'createdAt': createdAt.toIso8601String(),
         'updatedAt': updatedAt.toIso8601String(),
+        'bpv_telefoon': bpv_telefoon,
       };
 
   static Placement fromDb(Map<String, Object?> m) => Placement(
@@ -198,6 +204,7 @@ class Placement {
         deleted: (m['deleted'] as int? ?? 0) == 1,
         createdAt: DateTime.parse(m['createdAt'] as String),
         updatedAt: DateTime.parse(m['updatedAt'] as String),
+        bpv_telefoon: m['bpv_telefoon'] as String?,
       );
 
   Map<String, Object?> toRemote() => {
@@ -228,6 +235,7 @@ class Placement {
         'deleted': deleted,
         'created_at': createdAt.toIso8601String(),
         'updated_at': updatedAt.toIso8601String(),
+        'bpv_telefoon': bpv_telefoon,
       };
 
   static Placement fromRemote(Map<String, Object?> m) => Placement(
@@ -259,6 +267,7 @@ class Placement {
         deleted: (m['deleted'] as bool? ?? false),
         createdAt: DateTime.parse(m['created_at'] as String),
         updatedAt: DateTime.parse(m['updated_at'] as String),
+        bpv_telefoon: m['bpv_telefoon'] as String?,
       );
 
   static DateTime? _dt(String? s) => (s == null || s.isEmpty) ? null : DateTime.parse(s);

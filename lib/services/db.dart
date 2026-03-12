@@ -15,9 +15,9 @@ class AppDb {
     final dbPath = p.join(dir.path, 'stage_app.db');
     _db = await openDatabase(
       dbPath,
-      version: 2,
+      version: 3,
       onCreate: (db, _) async {
-        await _createV2(db);
+        await _createV3(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -35,11 +35,16 @@ class AppDb {
           await db.execute('CREATE INDEX IF NOT EXISTS idx_placements_owner ON placements(ownerId);');
           await db.execute('CREATE INDEX IF NOT EXISTS idx_placements_dirty ON placements(dirty);');
         }
+
+        if (oldVersion < 3) {
+          // v2 -> v3 migration (add bpv_telefoon)
+          await db.execute('ALTER TABLE placements ADD COLUMN bpv_telefoon TEXT;');
+        }
       },
     );
   }
 
-  Future<void> _createV2(Database db) async {
+  Future<void> _createV3(Database db) async {
     await db.execute('''
       CREATE TABLE placements (
         id TEXT PRIMARY KEY,
@@ -62,6 +67,7 @@ class AppDb {
         bpvVerwachteEinddatum TEXT,
 
         bpvEmail TEXT,
+        bpv_telefoon TEXT,
         opmerkingen TEXT,
 
         firstVisitDate TEXT,
@@ -147,10 +153,10 @@ class AppDb {
 
     if (s.isNotEmpty) {
       where.add('('
-          'lower(roepnaam) LIKE ? OR lower(achternaam) LIKE ? OR lower(bpvBedrijf) LIKE ? OR lower(klas) LIKE ? OR lower(docent) LIKE ?'
+          'lower(roepnaam) LIKE ? OR lower(achternaam) LIKE ? OR lower(bpvBedrijf) LIKE ? OR lower(klas) LIKE ? OR lower(docent) LIKE ? OR lower(bpv_telefoon) LIKE ?'
           ')');
       final like = '%${s.toLowerCase()}%';
-      args.addAll([like, like, like, like, like]);
+      args.addAll([like, like, like, like, like, like]);
     }
 
     final rows = await db.query(
