@@ -1,4 +1,4 @@
-package com.example.stage_app
+package nl.talland.stage_app
 
 import io.flutter.embedding.android.FlutterActivity
 
