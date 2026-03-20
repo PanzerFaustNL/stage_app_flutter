@@ -1,41 +1,44 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:stage_app/screens/auth_gate.dart';
-import 'package:stage_app/services/db.dart';
+
+import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
+import 'services/db.dart';
+import 'supabase_config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Local DB
-  await AppDb.instance.init();
-
-  // Supabase config from .env
-  await dotenv.load(fileName: ".env");
-  final supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
-  final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY'] ?? '';
-  if (supabaseUrl.isEmpty || supabaseAnonKey.isEmpty) {
-    // App will still run, but sync/login won't work until configured.
-    debugPrint('Supabase not configured. Add SUPABASE_URL and SUPABASE_ANON_KEY to .env');
-  } else {
-    await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
+  if (Platform.isWindows || Platform.isLinux) {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
   }
 
-  runApp(const StageApp());
+  await Supabase.initialize(
+    url: SupabaseConfig.url,
+    anonKey: SupabaseConfig.anonKey,
+  );
+
+  await AppDb.instance.init();
+
+  runApp(const MyApp());
 }
 
-class StageApp extends StatelessWidget {
-  const StageApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final session = Supabase.instance.client.auth.currentSession;
+
     return MaterialApp(
-      title: 'Stage App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-        useMaterial3: true,
-      ),
-      home: const AuthGate(),
+      debugShowCheckedModeBanner: false,
+      home: session == null
+          ? const LoginScreen()
+          : const HomeScreen(localOnly: false),
     );
   }
 }
