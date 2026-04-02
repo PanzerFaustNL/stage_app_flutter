@@ -15,7 +15,11 @@ Future<void> main() async {
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
+    print("Hallo allemaal");
   }
+
+  final path = await getDatabasesPath();
+  print('DB PATH: $path');
 
   await Supabase.initialize(
     url: SupabaseConfig.url,

@@ -56,20 +56,20 @@ class SyncService {
       );
     }
 
+    int pushed = 0;
+
     // 1) Push local dirty rows
     final dirty = await AppDb.instance.listDirtyPlacements();
-    int pushed = 0;
 
     if (dirty.isNotEmpty) {
       final payload = dirty
           .map(
-            (p) => p
-                .copyWith(
-                  ownerId: p.ownerId ?? user.id,
-                  ownerEmail: p.ownerEmail ?? user.email,
-                )
-                .toRemote(),
-          )
+            (p) => p.copyWith(
+          ownerId: p.ownerId ?? user.id,
+          ownerEmail: p.ownerEmail ?? user.email,
+          updatedAt: DateTime.now().toUtc(),
+        ).toRemote(),
+      )
           .toList();
 
       await _sb.from('placements').upsert(payload, onConflict: 'id');
@@ -91,17 +91,34 @@ class SyncService {
       rows = await _sb
           .from('placements')
           .select()
-          .filter('updated_at', 'gte', last.toIso8601String())
+          .gte('updated_at', last.toUtc().toIso8601String())
           .order('updated_at', ascending: true);
     }
 
     final list = (rows as List).cast<Map<String, Object?>>();
     final placements = list.map(Placement.fromRemote).toList();
 
-    await AppDb.instance.upsertMany(placements);
+    if (placements.isNotEmpty) {
+      await AppDb.instance.upsertMany(placements);
+    }
 
-    final now = DateTime.now().toIso8601String();
-    await AppDb.instance.setMeta(_metaLastSync, now);
+    // 3) Save newest updated_at returned by server, not device time
+    String newLastSyncIso =
+        lastIso ?? DateTime.fromMillisecondsSinceEpoch(0, isUtc: true).toIso8601String();
+
+    DateTime? latestUpdatedAt;
+    for (final p in placements) {
+      final dt = p.updatedAt.toUtc();
+      if (latestUpdatedAt == null || dt.isAfter(latestUpdatedAt)) {
+        latestUpdatedAt = dt;
+      }
+    }
+
+    if (latestUpdatedAt != null) {
+      newLastSyncIso = latestUpdatedAt.toIso8601String();
+    }
+
+    await AppDb.instance.setMeta(_metaLastSync, newLastSyncIso);
 
     return SyncResult(
       pushed: pushed,
